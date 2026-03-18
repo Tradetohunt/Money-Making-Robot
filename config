@@ -1,0 +1,36 @@
+# Bot Configuration
+
+bot_mode: "minimal_guardrails"  # This ensures the bot has baseline protections
+
+# Trading Parameters
+trading:
+  symbol: "BTC/USDT"               # Currency pair for trading
+  check_interval_seconds: 2        # Bot checks for trading opportunities every 2 seconds
+  min_profit_percent: 1.0          # Minimum percentage profit needed to execute a trade
+
+# Risk Management
+risk_management:
+  max_trade_size: 50               # Maximum amount allocated to any trade (in USD)
+  max_position_size: 500           # Maximum total position size (in USD)
+  max_daily_loss: 500              # Maximum allowed loss in one day (in USD)
+
+# Exchange Configurations
+exchanges:
+  binance:
+    enabled: true
+    api_key: "{{ BINANCE_API_KEY }}"       # Placeholder for .env values
+    api_secret: "{{ BINANCE_API_SECRET }}" # Placeholder for .env values
+
+  kraken:
+    enabled: true
+    api_key: "{{ KRAKEN_API_KEY }}"        # Placeholder for .env values
+    api_secret: "{{ KRAKEN_API_SECRET }}"  # Placeholder for .env values
+
+# Health Monitoring
+health_monitoring:
+  enabled: true
+  check_interval_seconds: 30
+
+# Bot Execution Settings
+execution:
+  dry_run: true               # If true, bot runs in "test" mode without real trades
